@@ -1,17 +1,17 @@
 import axios from "axios";
 
-const API = "http://localhost:4000/api/v1/discussions";
+const API = import.meta.env.VITE_API_URL;
 
 export const getPosts = () => {
-  return axios.get(`${API}/posts`);
+  return axios.get(`${API}/discussions/posts`);
 };
 
 export const getPost = (id) => {
-  return axios.get(`${API}/posts/${id}`);
+  return axios.get(`${API}/discussions/posts/${id}`);
 };
 
 export const createPost = (token, data) => {
-  return axios.post(`${API}/posts`, data, {
+  return axios.post(`${API}/discussions/posts`, data, {
     headers: {
       Authorization: `Bearer ${token}`
     }
@@ -19,7 +19,7 @@ export const createPost = (token, data) => {
 };
 
 export const addComment = (token, postId, data) => {
-  return axios.post(`${API}/posts/${postId}/comments`, data, {
+  return axios.post(`${API}/discussions/posts/${postId}/comments`, data, {
     headers: {
       Authorization: `Bearer ${token}`
     }

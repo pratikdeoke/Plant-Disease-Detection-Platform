@@ -19,7 +19,7 @@ export default function Post() {
   const fetchPostData = async () => {
     try {
       const res = await API.get(`/discussions/posts/${id}`);
-      console.log("SINGLE POST DATA:", res.data.post);
+      // console.log("SINGLE POST DATA:", res.data.post);
       setPost(res.data.post);
       setComments(res.data.comments);
       setTotalComments(Number(res.data.total_comments));

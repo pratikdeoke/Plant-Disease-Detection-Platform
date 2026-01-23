@@ -13,6 +13,6 @@ def predict_image(img):
 
     return {
         "disease": CLASS_MAPPING.get(class_index, "Unknown"),
-        "confidence": confidence,
+        "confidence": round(confidence*100, 2),
         "model_version": "v1.0.0"
     }

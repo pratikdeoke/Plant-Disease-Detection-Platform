@@ -22,22 +22,23 @@ export const predictImage = async (req, res) => {
       { headers: formData.getHeaders() }
     );
 
+    fs.unlinkSync(req.file.path);
+
     const { disease, confidence, model_version } = mlResponse.data;
 
     const predictionId = generateUUID();
-    const imageUrl = `/uploads/${req.file.filename}`;
 
     await pool.query(
-      `INSERT INTO predictions (id, user_id, image_url, disease, confidence, model_version)
-       VALUES ($1, $2, $3, $4, $5, $6)`,
-      [predictionId, userId, imageUrl, disease, confidence, model_version]
+      `INSERT INTO predictions (id, user_id, disease, confidence, model_version)
+      VALUES ($1, $2, $3, $4, $5)`,
+      [predictionId, userId, disease, confidence, model_version]
     );
+
 
     res.json({
       disease,
       confidence,
-      model_version,
-      image_url: imageUrl
+      model_version
     });
 
   } catch (err) {
