@@ -4,3 +4,5 @@ import { config } from "./config.js";
 app.listen(config.PORT, () => {
   console.log(`Backend running on port ${config.PORT}`);
 });
+
+export default app;
