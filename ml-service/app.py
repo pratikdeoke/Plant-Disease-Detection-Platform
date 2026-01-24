@@ -5,6 +5,10 @@ from prediction import predict_image
 
 app = Flask(__name__)
 
+@app.route("/", methods=["GET"])
+def home():
+    return {"message": "Plant ML service is running"}
+
 @app.route("/health", methods=["GET"])
 def health():
     return {"status": "ok"}
