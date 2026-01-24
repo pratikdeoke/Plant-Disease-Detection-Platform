@@ -20,7 +20,7 @@ app.get("/", (req, res) => {
   res.send("Backend is running");
 });
 
-app.use("/uploads", express.static(path.join(__dirname, "../uploads")));
+// app.use("/uploads", express.static(path.join(__dirname, "../uploads")));
 
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/predictions", predictionRoutes);
