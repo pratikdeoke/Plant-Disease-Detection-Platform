@@ -7,7 +7,11 @@
   ],
   "routes": [
     {
-      "src": "/(.*)",
+      "src": "/health",
+      "dest": "/app.py"
+    },
+    {
+      "src": "/predict",
       "dest": "/app.py"
     }
   ]
