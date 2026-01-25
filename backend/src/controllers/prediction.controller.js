@@ -13,8 +13,13 @@ export const predictImage = async (req, res) => {
       return res.status(400).json({ message: "No image uploaded" });
     }
 
+    // const formData = new FormData();
+    // formData.append("image", fs.createReadStream(req.file.path));
     const formData = new FormData();
-    formData.append("image", fs.createReadStream(req.file.path));
+    formData.append("image", req.file.buffer, {
+      filename: req.file.originalname,
+      contentType: req.file.mimetype
+    });
 
     const mlResponse = await axios.post(
       config.ML_SERVICE_URL,
@@ -22,7 +27,7 @@ export const predictImage = async (req, res) => {
       { headers: formData.getHeaders() }
     );
 
-    fs.unlinkSync(req.file.path);
+    // fs.unlinkSync(req.file.path);
 
     const { disease, confidence, model_version } = mlResponse.data;
 
