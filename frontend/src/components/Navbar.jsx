@@ -28,10 +28,9 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           
           <Link to="/" className="flex items-center gap-2 group">
-            {/* <div className="bg-emerald-500 p-1.5 rounded-lg">
+            <div className="bg-emerald-500 p-1.5 rounded-lg">
               <Sprout className="text-white w-6 h-6" />
-            </div> */}
-            <link rel="icon" type="image/svg+xml" href="https://png.pngtree.com/template/20191024/ourmid/pngtree-flower-pot-and-plant-logo-growth-vector-logo-image_322946.jpg" />
+            </div>
             <span className="font-bold text-white tracking-tighter text-xl uppercase italic">
               Plant<span className="text-emerald-500"> Disease</span>
             </span>
