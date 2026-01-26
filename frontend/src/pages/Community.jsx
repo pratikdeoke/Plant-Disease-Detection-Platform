@@ -65,25 +65,6 @@ export default function Community() {
     <div className="w-full pt-12 px-6 pb-24">
       <div className="max-w-5xl mx-auto space-y-8">
         {/* Header */}
-        {/* <div className="flex justify-between items-center">
-          <div>
-            <h1 className="text-4xl font-extrabold text-white flex items-center gap-3">
-              <Users className="text-emerald-500 w-8 h-8" />
-              PlantCare <span className="text-emerald-500 italic">Community</span>
-            </h1>
-            <p className="text-gray-400 mt-2">Share knowledge with people.</p>
-          </div>
-
-          {localStorage.getItem("token") && (
-            <Link to="/create-post">
-              <Button className="bg-emerald-600 hover:bg-emerald-500 gap-2">
-                <Plus className="w-4 h-4" /> Create Post
-              </Button>
-            </Link>
-          )}
-        </div> */}
-
-        {/* Header */}
         <div className="flex flex-col gap-4 sm:flex-row sm:justify-between sm:items-center">
           <div className="min-w-0">
             <h1 className="flex items-center gap-2 text-2xl sm:text-4xl font-extrabold text-white flex-wrap">
