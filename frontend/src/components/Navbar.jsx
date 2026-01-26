@@ -12,8 +12,8 @@ export default function Navbar() {
 
   const handleLogout = () => {
     localStorage.removeItem("token");
-    navigate("/login");
-    window.location.reload(); 
+     navigate("/login", { replace: true });
+    // window.location.reload(); // it only works locally as dev server handles SPA fallback automatically
   };
 
   const navLinks = [
