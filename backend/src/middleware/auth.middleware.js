@@ -12,6 +12,7 @@ export const authenticate = (req, res, next) => {
     const token = authHeader.split(" ")[1];
 
     const decoded = jwt.verify(token, config.JWT_SECRET);
+    console.log("DECODED JWT:", decoded);
 
     req.user = decoded;
     next();
