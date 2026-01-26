@@ -30,21 +30,36 @@ export default function Community() {
     const token = localStorage.getItem("token");
     if (!token) return alert("Please login to like posts");
 
+    // setPosts((currentPosts) =>
+    //   currentPosts.map((p) => {
+    //     if (p.id === postId) {
+    //       const isCurrentlyLiked = p.is_liked;
+    //       return {
+    //         ...p,
+    //         is_liked: !isCurrentlyLiked,
+    //         total_likes: isCurrentlyLiked 
+    //           ? Math.max(0, Number(p.total_likes) - 1) 
+    //           : Number(p.total_likes) + 1,
+    //       };
+    //     }
+    //     return p;
+    //   })
+    // );
+
+    const { is_liked, total_likes } = res.data;
+
     setPosts((currentPosts) =>
-      currentPosts.map((p) => {
-        if (p.id === postId) {
-          const isCurrentlyLiked = p.is_liked;
-          return {
-            ...p,
-            is_liked: !isCurrentlyLiked,
-            total_likes: isCurrentlyLiked 
-              ? Math.max(0, Number(p.total_likes) - 1) 
-              : Number(p.total_likes) + 1,
-          };
-        }
-        return p;
-      })
+      currentPosts.map((p) =>
+        p.id === postId
+          ? {
+              ...p,
+              is_liked,
+              total_likes,
+            }
+          : p
+      )
     );
+
 
     try {
       await API.post(`/discussions/posts/${postId}/like`);
