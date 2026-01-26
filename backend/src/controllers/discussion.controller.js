@@ -103,30 +103,6 @@ export const toggleLike = async (req, res) => {
   const { id } = req.params; 
   const userId = req.user.id; 
 
-  // try {
-  //   const checkLike = await pool.query(
-  //     "SELECT id FROM post_likes WHERE post_id = $1 AND user_id = $2",
-  //     [id, userId]
-  //   );
-
-  //   if (checkLike.rows.length > 0) {
-  //     await pool.query(
-  //       "DELETE FROM post_likes WHERE post_id = $1 AND user_id = $2",
-  //       [id, userId]
-  //     );
-  //     return res.json({ is_liked: false });
-  //   } else {
-  //     await pool.query(
-  //       "INSERT INTO post_likes (post_id, user_id) VALUES ($1, $2)",
-  //       [id, userId]
-  //     );
-  //     return res.json({ is_liked: true });
-  //   }
-  // } catch (err) {
-  //   console.error("LIKE TOGGLE ERROR:", err);
-  //   res.status(500).json({ message: "Server error" });
-  // }
-
   try {
     const checkLike = await pool.query(
       "SELECT id FROM post_likes WHERE post_id = $1 AND user_id = $2",
@@ -138,26 +114,16 @@ export const toggleLike = async (req, res) => {
         "DELETE FROM post_likes WHERE post_id = $1 AND user_id = $2",
         [id, userId]
       );
+      return res.json({ is_liked: false });
     } else {
       await pool.query(
         "INSERT INTO post_likes (post_id, user_id) VALUES ($1, $2)",
         [id, userId]
       );
+      return res.json({ is_liked: true });
     }
-
-    const likesResult = await pool.query(
-      "SELECT COUNT(*)::int AS total_likes FROM post_likes WHERE post_id = $1",
-      [id]
-    );
-
-    return res.json({
-      is_liked: checkLike.rows.length === 0,
-      total_likes: likesResult.rows[0].total_likes,
-    });
-
   } catch (err) {
     console.error("LIKE TOGGLE ERROR:", err);
     res.status(500).json({ message: "Server error" });
   }
-
 };
