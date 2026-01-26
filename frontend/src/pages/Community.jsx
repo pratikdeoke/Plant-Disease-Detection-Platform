@@ -65,7 +65,7 @@ export default function Community() {
     <div className="w-full pt-12 px-6 pb-24">
       <div className="max-w-5xl mx-auto space-y-8">
         {/* Header */}
-        <div className="flex justify-between items-center">
+        {/* <div className="flex justify-between items-center">
           <div>
             <h1 className="text-4xl font-extrabold text-white flex items-center gap-3">
               <Users className="text-emerald-500 w-8 h-8" />
@@ -77,6 +77,27 @@ export default function Community() {
           {localStorage.getItem("token") && (
             <Link to="/create-post">
               <Button className="bg-emerald-600 hover:bg-emerald-500 gap-2">
+                <Plus className="w-4 h-4" /> Create Post
+              </Button>
+            </Link>
+          )}
+        </div> */}
+
+        {/* Header */}
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+          <div>
+            <h1 className="text-3xl md:text-4xl font-extrabold text-white flex items-center gap-3 flex-wrap">
+              <Users className="text-emerald-500 w-8 h-8 shrink-0" />
+              <span>
+                PlantCare <span className="text-emerald-500 italic">Community</span>
+              </span>
+            </h1>
+            <p className="text-gray-400 mt-2">Share knowledge with people.</p>
+          </div>
+
+          {localStorage.getItem("token") && (
+            <Link to="/create-post" className="w-full md:w-auto">
+              <Button className="w-full md:w-auto bg-emerald-600 hover:bg-emerald-500 gap-2">
                 <Plus className="w-4 h-4" /> Create Post
               </Button>
             </Link>
