@@ -34,6 +34,7 @@ export default function History() {
       .finally(() => setLoading(false));
   }, []);
 
+  
   const filteredHistory = history.filter((item) =>
     item.disease.toLowerCase().includes(searchTerm.toLowerCase())
   );
