@@ -1,13 +1,14 @@
 # Plant-Disease-Detection-Platform 🌱
 
-A full-stack web platform that enables users to detect plant diseases from leaf images and engage in a community discussion system.  
-The application uses a Dockerized machine learning inference service for image-based disease classification and a scalable microservices architecture for production deployment.
+A full-stack web platform that enables users to detect plant diseases from leaf images and engage in a community discussion system. The application uses a Dockerized machine learning inference service for image-based disease classification and a scalable microservices architecture for production deployment.
 
 ---
 
 ## 🔗 Live Demo
 
-🔴 **Live App:** https://plant-disease-detection-platform.vercel.app
+🔴 **Live App:** https://plant-disease-detection-platform.vercel.app  
+⚙️ **Backend API:** https://plant-disease-detection-platform-ba.vercel.app  
+🤖 **ML Service:** https://plant-ml-service.onrender.com  
 🔁 **Repository:** https://github.com/pratikdeoke/Plant-Disease-Detection-Platform
 
 ---
