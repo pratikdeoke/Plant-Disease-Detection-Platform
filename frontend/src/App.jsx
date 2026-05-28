@@ -8,6 +8,7 @@ import Community from "./pages/Community";
 import Post from "./pages/Post";
 import CreatePost from "./pages/CreatePost";
 import ProtectedRoute from "./components/ProtectedRoute";
+import VerifyEmail from "./pages/VerifyEmail";
 
 export default function App() {
   return (
@@ -18,6 +19,11 @@ export default function App() {
             <Layout><Upload /></Layout>
           </ProtectedRoute>
         } />
+
+        <Route
+          path="/verify-email/:token"
+          element={<VerifyEmail />}
+        />
 
         <Route path="/login" element={<Layout><Login /></Layout>} />
         <Route path="/register" element={<Layout><Register /></Layout>} />
