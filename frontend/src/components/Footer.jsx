@@ -14,7 +14,7 @@ export default function Footer() {
           </div>
           
           <p className="text-gray-500 text-[10px] sm:text-xs text-center order-last md:order-none">
-            © {new Date().getFullYear()} PlantCare. All rights reserved.
+            © {new Date().getFullYear()} Plant Disease Detection System. All rights reserved.
           </p>
 
           <div className="flex items-center gap-6 justify-center md:justify-end">
