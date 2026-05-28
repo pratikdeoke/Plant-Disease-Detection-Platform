@@ -12,13 +12,35 @@ export default function UploadPage() {
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
 
+  const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB
+
+  const allowedTypes = [
+    "image/jpeg",
+    "image/png",
+    "image/jpg",
+    "image/webp",
+  ];
+
   const handleFileChange = (e) => {
     const selectedFile = e.target.files[0];
-    if (selectedFile) {
-      setFile(selectedFile);
-      setPreview(URL.createObjectURL(selectedFile));
-      setResult(null); 
+
+    if (!selectedFile) return;
+
+    // File type validation
+    if (!allowedTypes.includes(selectedFile.type)) {
+      alert("Only JPG, PNG, and WEBP images are allowed.");
+      return;
     }
+
+    // File size validation
+    if (selectedFile.size > MAX_FILE_SIZE) {
+      alert("File size must be less than 5MB.");
+      return;
+    }
+
+    setFile(selectedFile);
+    setPreview(URL.createObjectURL(selectedFile));
+    setResult(null);
   };
 
   const handleSubmit = async (e) => {
