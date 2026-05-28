@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import API from "../api/api";
-import { LogIn, Mail, Lock, Sprout, Loader2 } from "lucide-react";
+import { LogIn, Mail, Lock, Sprout, Loader2, Eye, EyeOff } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -10,6 +10,7 @@ import { Label } from "@/components/ui/label";
 export default function Login() {
   const [form, setForm] = useState({ email: "", password: "" });
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -58,16 +59,30 @@ export default function Login() {
             </div>
             <div className="space-y-2">
               <Label htmlFor="password">Password</Label>
+
               <div className="relative">
                 <Lock className="absolute left-3 top-3 h-4 w-4 text-gray-500" />
+
                 <Input
                   id="password"
                   placeholder="Password"
-                  type="password"
-                  className="pl-10 bg-white/5 border-white/10 focus:border-emerald-500 text-white"
+                  type={showPassword ? "text" : "password"}
+                  className="pl-10 pr-10 bg-white/5 border-white/10 focus:border-emerald-500 text-white"
                   onChange={(e) => setForm({ ...form, password: e.target.value })}
                   required
                 />
+
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute right-3 top-2.5 text-gray-400 hover:text-white"
+                >
+                  {showPassword ? (
+                    <EyeOff className="h-5 w-5" />
+                  ) : (
+                    <Eye className="h-5 w-5" />
+                  )}
+                </button>
               </div>
             </div>
             <Button className="w-full bg-emerald-600 hover:bg-emerald-500 mt-2" disabled={loading}>
