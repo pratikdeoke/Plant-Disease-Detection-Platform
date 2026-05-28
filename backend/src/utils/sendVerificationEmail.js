@@ -1,13 +1,9 @@
 import "dotenv/config";
 import { Resend } from "resend";
 
-// console.log("FRONTEND_URL =", process.env.FRONTEND_URL);
-
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export const sendVerificationEmail = async (email, token) => {
-  // const verifyUrl =
-  //   `${process.env.FRONTEND_URL}/verify-email/${token}`;
   const verifyUrl =
     `https://plant-disease-detection-platform-ba.vercel.app/api/v1/auth/verify/${token}`;
 
