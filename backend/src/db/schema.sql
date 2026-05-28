@@ -57,3 +57,9 @@ CREATE TABLE post_likes (
 );
 
 select * from post_likes;
+
+ALTER TABLE users
+ADD COLUMN is_verified BOOLEAN DEFAULT FALSE;
+
+ALTER TABLE users
+ADD COLUMN verification_token TEXT;
