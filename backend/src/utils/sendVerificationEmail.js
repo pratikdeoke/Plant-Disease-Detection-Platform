@@ -4,6 +4,8 @@ const resend = new Resend(
   process.env.RESEND_API_KEY
 );
 
+console.log(process.env.FRONTEND_URL);
+
 export const sendVerificationEmail =
   async (email, token) => {
 
