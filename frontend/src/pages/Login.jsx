@@ -48,7 +48,7 @@ export default function Login() {
                 <Mail className="absolute left-3 top-3 h-4 w-4 text-gray-500" />
                 <Input
                   id="email"
-                  placeholder="username@gmail.com"
+                  placeholder="Email"
                   type="email"
                   className="pl-10 bg-white/5 border-white/10 focus:border-emerald-500 text-white"
                   onChange={(e) => setForm({ ...form, email: e.target.value })}
@@ -62,6 +62,7 @@ export default function Login() {
                 <Lock className="absolute left-3 top-3 h-4 w-4 text-gray-500" />
                 <Input
                   id="password"
+                  placeholder="Password"
                   type="password"
                   className="pl-10 bg-white/5 border-white/10 focus:border-emerald-500 text-white"
                   onChange={(e) => setForm({ ...form, password: e.target.value })}
