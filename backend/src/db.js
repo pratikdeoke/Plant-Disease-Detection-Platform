@@ -124,6 +124,8 @@ const readDatabaseConfig = async () => {
 
 const databaseConfig = await readDatabaseConfig();
 
+console.log("DATABASE_URL FROM VERCEL:", process.env.DATABASE_URL);
+
 export const pool = new Pool({
   ...databaseConfig,
   connectionTimeoutMillis: 10000,
