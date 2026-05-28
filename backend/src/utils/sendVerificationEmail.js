@@ -9,7 +9,7 @@ export const sendVerificationEmail = async (email, token) => {
   // const verifyUrl =
   //   `${process.env.FRONTEND_URL}/verify-email/${token}`;
   const verifyUrl =
-    `https://plant-disease-detection-platform.vercel.app/verify-email/${token}`;
+    `https://plant-disease-detection-platform-ba.vercel.app/api/v1/auth/verify/${token}`;
 
   console.log("VERIFY URL =", verifyUrl);
 
