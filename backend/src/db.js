@@ -75,6 +75,7 @@ const readDatabaseConfig = () => {
     ssl: useSsl ? { rejectUnauthorized: false } : false,
   };
 };
+console.log("DATABASE_URL:", process.env.DATABASE_URL);
 
 export const pool = new Pool({
   ...readDatabaseConfig(),
@@ -82,5 +83,3 @@ export const pool = new Pool({
   idleTimeoutMillis: 30000,
   allowExitOnIdle: config.PORT !== undefined,
 });
-
-console.log(process.env.DATABASE_URL);
