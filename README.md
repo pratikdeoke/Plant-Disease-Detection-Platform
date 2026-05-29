@@ -107,6 +107,7 @@ Plant-Disease-Detection-Platform/
 │   │   ├── server.js
 │   │   └── utils/
 │   │       ├── id.js
+│   │       ├── sendVerificationEmail.js
 │   │       └── upload.js
 │   ├── uploads/
 │   │   ├── 1768035675175-1.jpg
@@ -166,7 +167,8 @@ Plant-Disease-Detection-Platform/
 │   │       ├── Login.jsx
 │   │       ├── Post.jsx
 │   │       ├── Register.jsx
-│   │       └── Upload.jsx
+│   │       ├── Upload.jsx
+│   │       └── VerifyEmail.jsx
 │   ├── tailwind.config.js
 │   ├── vercel.json
 │   └── vite.config.js
