@@ -61,16 +61,8 @@ export default function Register() {
       navigate("/login");
 
     } catch (error) {
-      console.log("ERROR:", error);
-      console.log("STATUS:", error.response?.status);
-      console.log("DATA:", error.response?.data);
-
-      alert(
-        error.response?.data?.message ||
-        JSON.stringify(error.response?.data) ||
-        error.message
-      );
-      // "Registration failed. Email might already exist."
+      
+      alert("Registration failed. Email might already exist.");
 
     } finally {
 
