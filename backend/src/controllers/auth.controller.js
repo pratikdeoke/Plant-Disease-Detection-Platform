@@ -71,10 +71,10 @@ export const register = async (req, res) => {
     );
 
     // Send verification email
-    await sendVerificationEmail(
-      email,
-      verificationToken
-    );
+    // await sendVerificationEmail(
+    //   email,
+    //   verificationToken
+    // );
 
     return res.status(201).json({
       message:
@@ -153,12 +153,12 @@ export const login = async (req, res) => {
     const user = result.rows[0];
 
     // Check verification
-    if (!user.is_verified) {
-      return res.status(401).json({
-        message:
-          "Please verify your email before logging in",
-      });
-    }
+    // if (!user.is_verified) {
+    //   return res.status(401).json({
+    //     message:
+    //       "Please verify your email before logging in",
+    //   });
+    // }
 
     // Check password
     const isMatch = await bcrypt.compare(
