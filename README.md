@@ -49,7 +49,7 @@ A full-stack web platform that enables users to detect plant diseases from leaf 
   JWT-based authentication ensures secure access to protected APIs.
 
 - **Relational Data Integrity:**  
-  PostgreSQL with UUID-based schemas for users, posts, comments, and likes.
+  PostgreSQL with UUID-based schemas for users, posts, comments and likes.
 
 ---
 
