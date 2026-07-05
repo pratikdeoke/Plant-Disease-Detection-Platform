@@ -197,7 +197,7 @@ Plant-Disease-Detection-Platform/
 - Python (v3.8+)
 - Docker
 - PostgreSQL
-- npm or yarn
+- npm
 
 ---
 
