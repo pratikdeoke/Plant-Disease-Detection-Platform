@@ -1,4 +1,4 @@
-# Plant-Disease-Detection-Platform 🌱
+# CropGuard | Plant-Disease-Detection-Platform 🌱
 
 A full-stack web platform that enables users to detect plant diseases from leaf images and engage in a community discussion system. The application uses a Dockerized machine learning inference service for image-based disease classification and a scalable microservices architecture for production deployment.
 
